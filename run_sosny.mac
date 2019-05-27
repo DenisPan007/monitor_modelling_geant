@@ -1,0 +1,30 @@
+# verbosities
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+#/hits/verbose 0
+
+
+/gps/particle e-
+#/gps/particle gamma
+/gps/pos/type Beam
+#/gps/pos/shape Square
+/gps/pos/shape Circle
+/gps/pos/centre 0. 0. 0. mm
+/gps/pos/radius 35. mm
+#/gps/pos/halfx 35. mm
+#/gps/pos/halfy 35. mm
+
+
+/gps/ang/type beam1d
+/gps/ang/sigma_r 0.00001 deg
+
+/gps/energy {energy} MeV
+
+/run/initialize
+/run/beamOn 10000
+
+/control/shell mv spectrumN1.txt Plate1_{energy}_MeV.txt
+/control/shell mv spectrumN2.txt Plate2_{energy}_MeV.txt
+/control/shell mv spectrumN3.txt Plate3_{energy}_MeV.txt

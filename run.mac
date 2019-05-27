@@ -1,0 +1,2 @@
+#/control/loop run_riinc.mac energy 100 3000 100
+/control/foreach run_sosny.mac energy  9.0 10.0

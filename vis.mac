@@ -1,0 +1,40 @@
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# Create a scene handler for a specific graphics system
+/vis/open VRML1FILE
+
+/vis/drawVolume
+
+# show only e+ e-
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add e+
+#/vis/filtering/trajectories/particleFilter-0/add e-
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+#/vis/filtering/trajectories/particleFilter-0/invert true
+#/vis/filtering/trajectories/particleFilter-0/verbose true
+#/vis/filtering/trajectories/particleFilter-0/active false
+
+# for drawing the tracks
+/vis/scene/add/trajectories
+
+# (if you prefer refreshing each event, comment out next line)
+/vis/scene/endOfEventAction accumulate
+
+
+/gps/particle e-
+/gps/pos/type Beam
+/gps/pos/shape Circle
+/gps/pos/centre 0. 0. 0. mm
+/gps/pos/radius 35. mm
+
+
+/gps/ang/type beam1d
+/gps/ang/sigma_r 0.00001 deg
+
+/gps/energy 10 MeV
+
+/run/initialize
+/run/beamOn 100
